@@ -1,0 +1,293 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="fontawesome/css/all.min.css"></link>
+<title>
+	Contact
+</title>
+<style>
+body
+{
+	background:linear-gradient(#22eaaa,#0d1217)  ;
+}
+form
+{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	background:rgba(0,0,0,.1);
+	padding:100px;
+}
+label
+{
+	font-family:sans-serif;
+	text-transform:uppercase;
+	letter-spacing: 2px;
+	font-size:1.3em;
+	color:White;
+}
+input[type=text]
+{
+	background:rgba(0,0,0,0.3);
+	border:none;
+	outline:none;
+	display:inline-block;
+	text-align:left;
+	box-shadow:3px 3px 3px rgba(0,0,0, .3);
+	padding:1em;
+	width:350px;
+	margin:10px 0;
+}
+input[type=text]:focus
+{
+	background:#0d1217;
+	color:white;
+	border:none;
+}
+button
+{
+	color:white;
+	margin:10px 0;
+	padding:10px 20px;
+	text-align:center;
+	font-weight:bold;
+	transition:0.5s;
+	letter-spacing: 2px;
+	font-family:sans-serif;
+	background:transparent;
+}
+button a
+{
+	color: white;
+	text-decoration: none;
+}
+button:hover
+{
+	background:transparent;
+	color:#0d1217;
+	border:5px solid #0d1217 ;
+	box-shadow:5px 5px 5px rgba(0,0,0, .3);
+	transform:rotate(360deg) scale(1.2) skew(-15deg);
+
+}
+*
+{
+	margin:0;
+	padding:0;
+}
+
+/* NAv */
+#nav
+{
+  background: black;
+  z-index: 10002;
+  position: relative;
+  width: 4em;
+  height: 100vh;
+  display: block;
+  vertical-align: baseline;
+}
+#nav ul li
+{
+    padding: 0;
+    width: 3.75em;
+    text-align: Center;
+    padding-top:25px;
+}
+#nav ul li a
+{
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 1.3em;
+}
+#nav ul li a.active
+{
+    color: #22eaaa;
+}
+#nav ul li a:hover
+{
+  color:white;
+}
+/* icon */
+.fas fa-home
+.fas fa-tasks
+.far fa-comment
+ {
+		text-decoration: none;
+		border-bottom: none;
+		position: relative;
+	}
+
+.fas fa-home
+.fas fa-tasks
+.far fa-comment:before {
+			font-smoothing: grayscale;
+			font-smoothing: antialiased;
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-transform: none !important;
+		}
+
+/* card */
+.card
+{
+		margin-left: 150px;
+
+}
+a[class^="slide"]{
+		text-decoration: none;
+		font-family: sans-serif;
+		font-size: 20px;
+		font-weight: bold;
+		color: #0d1217;
+		top: 10px;
+		line-height: 1.5em;
+		padding-left: 1.25em;
+		padding-right: 1.25em;
+		position: relative;
+		display: inline-block;
+		vertical-align: bottom;
+	}
+	a[class^="slide"]::after{
+		content: attr(data-linktext);
+		background:#0d1217 ;
+		color: #fff;
+		position:absolute;
+	display:block;
+	text-align: center;
+	}
+	a.slide_from_left::after{
+		top: 0;
+		right: 100%;
+		left: -100%;
+		transition: all 0.35s;
+	}
+	a[class^="slide"]:hover::after{
+		left: 0;
+		right:0;
+		top:0;
+		bottom:0;
+		transition: all 0.35s;
+
+	}
+	a[class^="slide"]:hover{
+		border-bottom:
+	}
+	a[class^="slide"]{
+		overflow: hidden;
+	}
+
+	.card p
+	{
+		position: absolute;
+		left: 60%;
+		font-family: cursive;
+	}
+
+/* notification bar*/
+
+
+
+.notification {
+    transition: all 0.35s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-top: -100%;
+    background: black;
+    border-bottom: 0.125rem solid #22eaaa;
+    box-shadow: rgba(0,0,0,0.4) 0 0.25rem 0.25rem 0;
+  }
+
+  .notification .content {
+    text-align: center;
+		font-family: fantasy;
+		letter-spacing: 2px;
+		font-size: 30px;
+    color: #22eaaa;
+    text-shadow: rgba(0,0,0,0.5) 0 -0.0625rem 0.0625rem;
+  }
+
+  .notification .close {
+    position: absolute;
+    top: calc(50% - 1rem);
+    right: 1rem;
+  }
+
+
+  .notification .close a {
+    display: block;
+    height: 2rem;
+    width: 2rem;
+    text-indent: 2rem;
+    overflow: hidden;
+  }
+  .notification .close:after {
+    content: 'X';
+    font-weight: normal;
+    color:red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    line-height: 2rem;
+    width: 2rem;
+    text-align: center;
+    pointer-events: none;
+  }
+	.notification .close:after:hover
+	{
+		color: red;
+	}
+
+  .notification:target {
+    transition: all 0.35s;
+    margin-top: 0;
+  }
+
+
+
+</style>
+</head>
+<body>
+
+	<div id="one" class="notification">
+	     <div class="content">
+	        <p> SEND</p>
+	        <div class="close"><a href="#">Close</a> </div>
+
+	     </div>
+	</div>
+
+
+	<aside id="nav">
+		<ul>
+			<li><a href="index.php"><i class="fas fa-home"></i></a></li>
+			<li><a href="Tasks.html"><i class="fas fa-tasks"></i></a></li>
+			<li><a href="Contact.html" class="active"><i class="far fa-comment"></i></a></li>
+			<li style="margin-top:700%;"><a href="Contact.html"><i class="fas fa-times"></i></a></li>
+		</ul>
+	</aside>
+<form>
+	<label>First Name :</label><br>
+	<input type="text" placeholder="First Name" /><br>
+	<label>Last Name :</label><br>
+	<input type="text" placeholder="Last Name" /><br>
+	<label>COMMENT : </label><br>
+	<input type="text" placeholder="Comment" style="height:70px;" /><br>
+	<button><a href="#one" class="open_notification">SenD</a></button>
+	<span class="card">
+		<p> I have<a href="Card.html" data-linktext=" CARD "  class="slide_from_left">' My '</a>own </p>
+	</span>
+</form>
+
+
+
+
+</body>
+</html>

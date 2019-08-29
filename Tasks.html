@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fontawesome/css/all.min.css"></link>
+<style>
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+  background:white;
+  overflow: hidden;
+}
+#container
+{
+
+}
+
+#container h1 {
+  position: absolute;
+  top:45%;
+  left:35%;
+  font-size: 100px;
+  font-family:monospace;
+  color:black;
+  text-align: center;
+  /*Create overlap*/
+
+  margin: 0;
+  line-height: 0;
+  /*Animation*/
+
+  animation: glitch1 2.5s infinite;
+}
+
+#container h1:nth-child(2) {
+  color: #67f3da;
+  animation: glitch2 2.5s infinite;
+}
+
+#container h1:nth-child(3) {
+  color: #f16f6f;
+  animation: glitch3 2.5s infinite;
+}
+/*Keyframes*/
+
+@keyframes glitch1 {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  7% {
+    transform: skew(-0.5deg, -0.9deg);
+    opacity: 0.75;
+  }
+  10% {
+    transform: none;
+    opacity: 1;
+  }
+  27% {
+    transform: none;
+    opacity: 1;
+  }
+  30% {
+    transform: skew(0.8deg, -0.1deg);
+    opacity: 0.75;
+  }
+  35% {
+    transform: none;
+    opacity: 1;
+  }
+  52% {
+    transform: none;
+    opacity: 1;
+  }
+  55% {
+    transform: skew(-1deg, 0.2deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: none;
+    opacity: 1;
+  }
+  72% {
+    transform: none;
+    opacity: 1;
+  }
+  75% {
+    transform: skew(0.4deg, 1deg);
+    opacity: 0.75;
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes glitch2 {
+  0% {
+    transform: none;
+    opacity: 0.25;
+  }
+  7% {
+    transform: translate(-2px, -3px);
+    opacity: 0.5;
+  }
+  10% {
+    transform: none;
+    opacity: 0.25;
+  }
+  27% {
+    transform: none;
+    opacity: 0.25;
+  }
+  30% {
+    transform: translate(-5px, -2px);
+    opacity: 0.5;
+  }
+  35% {
+    transform: none;
+    opacity: 0.25;
+  }
+  52% {
+    transform: none;
+    opacity: 0.25;
+  }
+  55% {
+    transform: translate(-5px, -1px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: none;
+    opacity: 0.25;
+  }
+  72% {
+    transform: none;
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(-2px, -6px);
+    opacity: 0.5;
+  }
+  80% {
+    transform: none;
+    opacity: 0.25;
+  }
+  100% {
+    transform: none;
+    opacity: 0.25;
+  }
+}
+
+@keyframes glitch3 {
+  0% {
+    transform: none;
+    opacity: 0.25;
+  }
+  7% {
+    transform: translate(2px, 3px);
+    opacity: 0.5;
+  }
+  10% {
+    transform: none;
+    opacity: 0.25;
+  }
+  27% {
+    transform: none;
+    opacity: 0.25;
+  }
+  30% {
+    transform: translate(5px, 2px);
+    opacity: 0.5;
+  }
+  35% {
+    transform: none;
+    opacity: 0.25;
+  }
+  52% {
+    transform: none;
+    opacity: 0.25;
+  }
+  55% {
+    transform: translate(5px, 1px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: none;
+    opacity: 0.25;
+  }
+  72% {
+    transform: none;
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(2px, 6px);
+    opacity: 0.5;
+  }
+  80% {
+    transform: none;
+    opacity: 0.25;
+  }
+  100% {
+    transform: none;
+    opacity: 0.25;
+  }
+}
+/* h1
+{
+  position: absolute;
+  top:45%;
+  left:35%;
+  font-size: 100px;
+  font-family:monospace;
+  color:black;
+  text-align: center;
+} */
+header nav{
+    height: 5vh;
+    width: 12vw;
+    background: transparent;
+    position: fixed;
+    margin-left: 80vw;
+    margin-top: 2vh;
+    display: flex;
+    z-index: 10;
+}
+
+header nav a{
+    color: #22eaaa;
+    font-size: 2rem;
+    text-decoration: none;
+    margin-left: 1vw;
+}
+
+#one{
+    position:absolute;
+    height:660px;
+    width:105%;
+    background-image: repeating-linear-gradient(135deg,#333,#333 10%, transparent 10%, transparent 50%),
+      repeating-linear-gradient(-135deg, #333, #333 10%, transparent 10%, transparent 50%);
+      background-size: 12px 12px;
+	transition: all 2s;
+	opacity:0;
+	}
+
+#two{
+    position:absolute;
+    height: 740px;
+    width: 105%;
+	top:-660px;
+    font-size: 5rem;
+    text-align: center;
+  background: black;
+    transition: all 2s;
+	opacity:0;
+}
+
+#three{
+    position:absolute;
+    height: 660px;
+    width: 105%;
+     right:100%;
+    font-size: 5rem;
+    text-align: center;
+    background-color: #161616;
+ background-image: repeating-linear-gradient(135deg, #333, #333 10%, transparent 10%, transparent 50%);
+    background-size: 12px 12px;
+    transition: all 2s;
+	opacity:0;
+
+}
+#three img
+{
+  width:400px;
+  height: 400px;
+  margin-left: 30%;
+  margin-top: 10%;
+}
+
+
+
+#four{
+    position:absolute;
+    height: 660px;
+    width: 105%;
+    font-size: 5rem;
+	 right:200%;
+    text-align: center;
+     background-color: #161616;
+     background:black;
+    transition: all 2s;
+	opacity:0;
+
+}
+#four img
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dead
+{
+  position: absolute;
+	width:200px;
+	height:312px;
+	left:40%;
+	top:40%;
+	background:url(images/Zombie.png);
+	background-repeat:no-repeat;
+	animation:Zombie 5s steps(10) infinite;
+}
+@keyframes Zombie
+{
+	0%{background-position:0px; transform:translatex(400px);}
+	100%{background-position:-2000px; transform:translatex(0px);}
+}
+
+
+#five{
+    position:absolute;
+    height:660px;
+    width:112%;
+    font-size: 5rem;
+	left:1200px;
+    text-align: center;
+    background-color: black;
+    transition: all 2s;
+	opacity:0;
+
+}
+
+#five img
+{
+  width:800px;
+  height: 400px;
+  margin-left: 30%;
+  margin-top: 10%;
+}
+
+
+
+
+
+
+#one:target {
+    z-index: 2;
+    opacity:1;
+	}
+
+
+#two:target {
+    z-index: 2;
+    opacity:1;
+	top:0px;
+	}
+
+#three:target {
+    z-index: 2;
+    opacity:1;
+	 right:0;
+
+	}
+
+
+#four:target {
+    z-index: 2;
+    opacity:1;
+	 right:0;
+
+	}
+
+
+#five:target {
+    z-index: 2;
+    opacity:1;
+	 left:0;
+	}
+
+  /* NAv */
+  #nav
+  {
+    background: #0d1217;
+    z-index: 10002;
+    position: relative;
+    width: 4em;
+    height: 100%;
+    position: fixed;
+    display: block;
+    vertical-align: baseline;
+  }
+  #nav ul li
+  {
+      padding: 0;
+      width: 3.75em;
+      text-align: Center;
+      padding-top:25px;
+  }
+  #nav ul li a
+  {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 1.3em;
+  }
+  #nav ul li a.active
+  {
+      color: #22eaaa;
+  }
+  #nav ul li a:hover
+  {
+    color:white;
+  }
+  /* icon */
+  .fas fa-home
+  .fas fa-tasks
+  .far fa-comment
+   {
+  		text-decoration: none;
+  		border-bottom: none;
+  		position: relative;
+  	}
+
+  .fas fa-home
+  .fas fa-tasks
+  .far fa-comment:before {
+  			font-smoothing: grayscale;
+  			font-smoothing: antialiased;
+  			font-family: FontAwesome;
+  			font-style: normal;
+  			font-weight: normal;
+  			text-transform: none !important;
+  		}
+/* image hoVer*/
+
+.content-all
+{
+	width:100%;
+	display:box;
+	display:flex;
+	flex-wrap:wrap;
+}
+.content-img
+{
+	width:400px;
+	height:302px;
+	margin:10px;
+	margin-top:5px;
+	position:relative;
+	overflow:hidden;
+}
+.content-img img
+{
+	width:100%;
+	transition:all 300ms;
+}
+.content-1
+{
+	width:1000px;
+	height:1000px;
+	position:absolute;
+	top:0;
+	background:rgba(0,255,100,.5);
+	transform:rotate(-30deg);
+	margin-left:-750px;
+	-webkit-transition:all 300ms;
+}
+.content-2
+{
+	width:1000px;
+	height:1000px;
+	position:absolute;
+	top:0;
+	background:rgba(0,255,100,.5);
+	transform:rotate(-30deg);
+	margin-left:-800px;
+	-webkit-transition:all 500ms;
+}
+.content-3
+{
+	width:1000px;
+	height:1000px;
+	position:absolute;
+	top:0;
+	background:rgba(0,255,100,.5);
+	transform:rotate(30deg);
+	margin-left:-800px;
+	margin-top:-500px;
+	box-shadow:0px 1px 20px -5px black;
+	-webkit-transition:all 900ms;
+}
+.content-4
+{
+	width:1000px;
+	height:1000px;
+	position:absolute;
+	top:0;
+	background:rgba(0,255,100,.5);
+	transform:rotate(30deg);
+	margin-left:-850px;
+	margin-top:-500px;
+	-webkit-transition:all 700ms;
+}
+
+.content-img:hoVer .content-1
+{
+	width:800%;
+	-webkit-transition:all 900ms;
+}
+.content-img:hoVer .content-2
+{
+	width:222%;
+	-webkit-transition:all 300ms;
+}
+.content-img:hoVer .content-3
+{
+	width:222%;
+	-webkit-transition:all 500ms;
+}
+.content-img:hoVer .content-4
+{
+	width:222%;
+	-webkit-transition:all 700ms;
+}
+
+.content-img:hoVer img
+{
+	transform:scale(1.5);
+	transition:all 300ms;
+	opacity:0.9;
+}
+
+.content-txt
+{
+	position:absolute;
+	width:100%;
+	padding:5px;
+	z-index:10;
+	color:white;
+	text-align:center;
+	margin-top:100px;
+}
+.content-txt h2
+{
+	font-size:200px;
+	opacity:0;
+	transition:all 300ms;
+	transform:scale(0.2);
+}
+.content-txt:hover h2
+{
+	opacity:1;
+	transition:all 300ms;
+	transform:scale(1);
+}
+
+/* section: two img hoVer*/
+
+#two ul
+{
+	position:absolute;
+	top:50%;
+	left:45%;
+	transform:translate(-50%,-45%);
+	margin:0;
+	padding:0;
+	width:600px;
+	height:150px;
+}
+#two ul li
+{
+	list-style:none;
+	position:absolute;
+	width:200px;
+	height:200px;
+	background:#000;
+	margin:-100px;
+	transform:rotate(45deg);
+	transition:.5s;
+	overflow:hidden;
+	opacity:.5;
+}
+#two ul li:hover
+{
+opacity:1;
+}
+#two ul li.item1
+{
+	top:0;
+	left:0;
+
+}
+#two ul li.item2
+{
+	bottom:0;
+	left:25%;
+
+}
+#two ul li.item3
+{
+	top:0;
+	left:50%;
+
+}
+#two ul li.item4
+{
+	bottom:0;
+	left:75%;
+
+}
+#two ul li.item5
+{
+	top:0;
+	left:100%;
+
+}
+#two ul li .bg
+{
+	width:100%;
+	height:100%;
+	transform:rotate(-45deg) scale(1.4);
+}
+#two ul li.item1 .bg
+{
+	background:url(images/textanim.png);
+	background-size:cover;
+}
+#two ul li.item2 .bg
+{
+	background:url(images/loader.png);
+	background-size:cover;
+}
+#two ul li.item3 .bg
+{
+	background:url(images/cube.png);
+	background-size:cover;
+}
+#two ul li.item4 .bg
+{
+	background:url(images/Cartoonsprit.png);
+	background-size:cover;
+}
+#two ul li.item5 .bg
+{
+	background:url(images/svg.png);
+	background-size:cover;
+}
+
+
+
+	</style>
+    <title>TasKs</title>
+</head>
+
+<body>
+
+  <header>
+    <div id="container">
+      <h1>PRo<span style="color:#22eaaa;">j</span>ecTs</h1>
+      <h1>PRo<span style="color:#22eaaa;">j</span>ecTs</h1>
+      <h1>PRo<span style="color:#22eaaa;">j</span>ecTs</h1>
+      <h1>PRo<span style="color:#22eaaa;">j</span>ecTs</h1>
+    </div>
+
+    <!--<h1>PRo<span style="color:#22eaaa;">j</span>ecTs</h1>-->
+          <nav>
+              <a href="#one"> 1 </a>
+              <a href="#two"> 2 </a>
+              <a href="#three"> 3 </a>
+              <a href="#four"> 4 </a>
+              <a href="#five"> 5 </a>
+          </nav>
+      </header>
+
+     <section id="one">
+
+       <div class="content-all">
+
+  <a href="Tasks\3D cube.html"><div class="content-img">
+		<img src="images/3d cube.png"/>
+
+		<div class="content-txt">
+			<h2>1</h2>
+		</div>
+
+		<div class="content-1"></div>
+		<div class="content-2"></div>
+		<div class="content-3"></div>
+		<div class="content-4"></div>
+	</div></a>
+
+	<a href="E:\Work\Animation Scroll practice\Animation practice\Car bhag.html"><div class="content-img">
+		<img src="images/car bhag.png"/>
+
+		<div class="content-txt">
+			<h2>2</h2>
+		</div>
+
+		<div class="content-1"></div>
+		<div class="content-2"></div>
+		<div class="content-3"></div>
+		<div class="content-4"></div>
+	</div></a>
+
+	<a href="E:\Work\Animation Scroll practice\Animation practice\Filtering img.html"><div class="content-img">
+		<img src="images/filter.png"/>
+
+		<div class="content-txt">
+			<h2>Cycle</h2>
+		</div>
+
+		<div class="content-1"></div>
+		<div class="content-2"></div>
+		<div class="content-3"></div>
+		<div class="content-4"></div>
+	</div></a>
+
+	<a href="Tasks\Spot light.html"><div class="content-img">
+		<img src="images/spot.png"/>
+
+		<div class="content-txt">
+			<h2>Cycle</h2>
+		</div>
+
+		<div class="content-1"></div>
+		<div class="content-2"></div>
+		<div class="content-3"></div>
+		<div class="content-4"></div>
+	</div></a>
+
+	<a href="E:\Work\animations\30 tasks given\Vvork\Project 26-animated menu\index.html"><div class="content-img">
+		<img style="height:300px;"src="images/menu.png"/>
+
+		<div class="content-txt">
+			<h2>Cycle</h2>
+		</div>
+
+		<div class="content-1"></div>
+		<div class="content-2"></div>
+		<div class="content-3"></div>
+		<div class="content-4"></div>
+	</div></a>
+
+	<a href="E:\Work\Animation Scroll practice\Animation practice\swing.html"><div class="content-img">
+		<img src="images/swing.png"/>
+
+		<div class="content-txt">
+			<h2>Cycle</h2>
+		</div>
+
+		<div class="content-1"></div>
+		<div class="content-2"></div>
+		<div class="content-3"></div>
+		<div class="content-4"></div>
+	</div></a>
+
+
+
+</div>
+
+     </section>
+
+    <section id="two">
+
+      <ul>
+  	     <a href="Tasks\textanim.html"><li class="item1"><div class="bg"></div></li></a>
+  	     <a href="Tasks\loader.html"><li class="item2"><div class="bg"></div></li></a>
+         <a href="E:\Work\animations\30 tasks given\Vvork\Project 28-cube/index.html"><li class="item3"><div class="bg"></div></li></a>
+         <a href="E:\Work\Animation Scroll practice\Animation practice\Cartoon sprit.html"><li class="item4"><div class="bg"></div></li></a>
+         <a href="Tasks\svg.html"><li class="item5"><div class="bg"></div></li></a>
+      </ul>
+
+    </section>
+
+    <section id= "three">
+
+      <img style="" src="C:\Users\RiNo\Desktop\New folder\thank-you-funny-memes.jpg" />
+
+    </section>
+
+    <section id="four">
+
+      <img src="E:\Work\Animation Scroll practice\Animation practice\images\home-Black-background-.jpg" />
+      <div class="dead"> </div>
+
+    </section>
+
+    <section id="five">
+
+      <img src="C:\Users\RiNo\Desktop\New folder\Thank-You-Meme-66083334.jpg" />
+
+    </section>
+
+   <aside id="nav">
+     <ul>
+       <li><a href="index.php"><i class="fas fa-home"></i></a></li>
+       <li><a href="Tasks.html" class="active"><i class="fas fa-tasks"></i></a></li>
+       <li><a href="Contact.html"><i class="far fa-comment"></i></a></li>
+       <li style="margin-top:690%;"><a href="Contact.html"><i class="fas fa-times"></i></a></li>
+     </ul>
+   </aside>
+
+</body>
+
+</html>
